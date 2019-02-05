@@ -1,0 +1,102 @@
+.float-cart {
+  position: fixed;
+  top: 0;
+  right: 0px;
+  width: 450px;
+  height: 100%;
+  background-color: #1b1a20;
+  box-sizing: border-box;
+
+  &--cart-close{
+    right:-450px;
+  };
+  transition:right 0.2s;
+  -moz-transition:right 0.2s; /* Firefox 4 */
+  -webkit-transition:right 0.22s; /* Safari and Chrome */
+  -o-transition:right 0.2s; /* Opera */
+
+  &_header{
+    color: white;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 45px 0;
+
+    .header-title {
+      font-weight: bold;
+      font-size: 1.2em;
+      vertical-align: middle;
+    }
+  }
+
+  &_content {
+    height: 100%;
+    overflow-y: scroll;
+  }
+}
+
+.cart-close-button {
+  width: 50px;
+  height: 50px;
+  color: #ececec;
+  background-color: #1b1a20;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  &:hover {
+    background-color: #3e25cf;
+  }
+}
+
+.trolley {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+  background-image: url('../../static/bag-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &--cart-close {
+    position: absolute;
+    background-color: #000;
+    background-size: 50%;
+    top: 0;
+    left: -60px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+}
+
+.item-quantity-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  color: #0c0b10;
+  font-weight: bold;
+  font-size: 0.7em;
+  text-align: center;
+  line-height: 18px;
+  border-radius: 50%;
+  background-color: #eabf00;
+  position: absolute;
+  bottom: -5px;
+  right: 0px;
+
+  &--cart-close {
+    bottom: 5px;
+    right: 10px;
+  }
+}
+
+.cart-shelf {
+  position: relative;
+  min-height: 280px;
+  padding-bottom: 200px;
+}

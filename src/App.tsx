@@ -1,25 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { Component } from "react";
+import "./App.css";
+import { CartProduct } from "./common/models/CartProduct";
+import {Product} from "./common/models/Product";
+import CartContainer from "./components/Cart/CartContainer";
+import { AddCartProductAction } from "./dux/CartProduct/CartProductActions";
+import rootStore from "./dux/rootStore";
+import logo from "./logo.svg";
 class App extends Component {
-  render() {
+  public componentDidMount() {
+    const product: CartProduct = {
+      availableSizes : ["M"],
+      currencyFormat : "AUD",
+      currencyId : "$",
+      description : "description",
+      id : 123,
+      installments : 123,
+      isFreeShipping : true,
+      itemQuantity : 1,
+      price : 123,
+      sku : 1234,
+      style : "boom",
+      title : "boom shirt",
+    };
+
+    rootStore.dispatch(new AddCartProductAction(product));
+  }
+
+  public render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <CartContainer/>
       </div>
     );
   }
