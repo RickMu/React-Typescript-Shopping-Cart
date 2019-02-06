@@ -1,5 +1,4 @@
-
-.shelf-item {
+.cart-item {
   position: relative;
   box-sizing: border-box;
   padding: 5%;
@@ -15,81 +14,72 @@
     left: 5%;
   }
 
-  &--mouseover {
-    background: #0c0b10;
-  }
+}
 
-  &__del {
-    width: 16px;
-    height: 16px;
-    top: 15px;
-    right: 5%;
-    border-radius: 50%;
-    position: absolute;
-    background-size: auto 100%;
-    background-image: url('../../../static/sprite_delete-icon.png');
-    background-repeat: no-repeat;
-    z-index: 2;
-    cursor: pointer;
+.thumb {
+  vertical-align: top;
+  width: 15%;
+  margin-right: 3%;
+  display: inline-block;
 
-    &:hover {
-      background-position-x: -17px;
-    }
-  }
-
-  &__thumb,
-  &__details,
-  &__price {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  &__thumb {
-    vertical-align: middle;
-    width: 15%;
-    margin-right: 3%;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-  &__details {
-    width: 57%;
-
-    
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 
+.remove-icon {
+  width: 16px;
+  height: 16px;
+  top: 15px;
+  right: 5%;
+  border-radius: 50%;
+  position: absolute;
+  background-size: auto 100%;
+  background-image: url('../../../static/sprite_delete-icon.png');
+  background-repeat: no-repeat;
+  z-index: 2;
+  cursor: pointer;
+
+  &:hover {
+    background-position-x: -17px;
+  }
+}
+
+
 .details{
   
-  width: 57%;
+  display: inline-block;
+  width: 50%;
+  vertical-align: middle;
+  text-align: left;
   .title {
     color: #ececec;
     margin: 0;
-  }
-  
-  .price {
-    color: #eabf00;
-    text-align: right;
-    width: 25%;
-    display: inline-block;
-    vertical-align: middle;
-  
-    &:hover {
-      text-decoration: line-through;
-      opacity: 0.6;
-    }
   }
   
   .desc {
     color: #5b5a5e;
     margin: 0;
   
-    &:hover {
+    &--remove {
       text-decoration: line-through;
       opacity: 0.6;
     }
   }    
+}
+
+.price {
+  
+  display: inline-block;
+  color: #eabf00;
+  text-align: right;
+  width: 25%;
+  vertical-align: middle
+
+  &--remove {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
 }
 

@@ -28,7 +28,7 @@ class Cart extends React.Component<CartProps, State> {
         <div className="float-cart_content">
           <div className="float-cart_header">
             <div className={trolleyCss} onClick={this.toggleCartDrawer}>
-              <span className={trolleyItemQuantityCss}>2</span>
+              <span className={trolleyItemQuantityCss}>{this.props.cartProducts.length}</span>
             </div>
             <span className="header-title">Cart</span>
           </div>
