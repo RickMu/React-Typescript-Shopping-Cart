@@ -1,6 +1,11 @@
-.cart-shelf-container {
+.shelf-container {
   display: flex;
   flex-wrap: wrap;
-  width: 60%;
+  width: 80%;
   min-height: 600px;
+}
+
+.shelf {
+  width:100%;
+  display: flex;
 }

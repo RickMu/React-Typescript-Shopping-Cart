@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CartProduct } from "../../common/models/CartProduct";
+import { CartProduct } from "../../common/business-models/CartProduct";
 import { addCartProduct } from "../../dux/CartProduct/CartProductDispatcher";
 import { CartProps } from "./CartContainer";
 import CartProductContainer from "./CartProduct/CartProductContainer";
@@ -21,6 +21,12 @@ class Cart extends React.Component<CartProps, State> {
     const trolleyCss = isOpen ? "trolley" : "trolley trolley--cart-close";
     const trolleyItemQuantityCss = isOpen ? "item-quantity-icon" :  "item-quantity-icon item-quantity-icon--cart-close";
 
+    const cartProducts = [];
+// tslint:disable-next-line: forin
+    for (const k in this.props.cartProducts) {
+      cartProducts.push(this.props.cartProducts[k]);
+    }
+
     return (
       <div className={classes}>
         <div className="cart-close-button" onClick={this.toggleCartDrawer}>X</div>
@@ -33,7 +39,7 @@ class Cart extends React.Component<CartProps, State> {
             <span className="header-title">Cart</span>
           </div>
           <div className="cart-shelf">
-            {this.props.cartProducts.map( (value, index) => <CartProductContainer product={value} key={index}/>)}
+            {cartProducts.map((value, index) => <CartProductContainer product={value} key={index}/>)}
           </div>
         </div>
       </div>

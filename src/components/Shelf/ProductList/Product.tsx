@@ -1,5 +1,5 @@
 import React from "react";
-import { Product } from "../../../common/models/Product";
+import { Product } from "../../../common/business-models/Product";
 import { AddCartProduct } from "../ShelfContainer";
 import "./style.scss";
 
@@ -29,7 +29,7 @@ const ProductView: React.FunctionComponent<Props> = ({product, addToCart, key}) 
   return (
     <div
       className="shelf-item"
-      onClick={() => addToCart(product, key)}
+      onClick={() => addToCart(product, 1)}
       data-sku={product.sku}
     >
       {product.isFreeShipping && (

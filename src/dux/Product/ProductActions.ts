@@ -1,5 +1,5 @@
 import { Action } from "redux";
-import { Product } from "../../common/models/Product";
+import { Product } from "../../common/business-models/Product";
 
 export enum ProductActionType {
   PRODUCT_FETCHED = "[PRODUCT] fetched",

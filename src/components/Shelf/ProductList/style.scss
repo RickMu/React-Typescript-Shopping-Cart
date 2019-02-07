@@ -1,5 +1,5 @@
 .shelf-item {
-  width: 25%;
+  width: 20%;
   position: relative;
   text-align: center;
   box-sizing: border-box;
@@ -14,17 +14,6 @@
     .shelf-item__buy-btn {
       background-color: #eabf00;
     }
-  }
-
-  .shelf-stopper {
-    position: absolute;
-    color: #ececec;
-    top: 10px;
-    right: 10px;
-    padding: 5px;
-    font-size: 0.6em;
-    background-color: #1b1a20;
-    cursor: default;
   }
 
   &__thumb {
@@ -75,4 +64,15 @@
 
     transition: background-color 0.2s;
   }
+}
+
+.shelf-stopper {
+  position: absolute;
+  color: #ececec;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  font-size: 0.6em;
+  background-color: #1b1a20;
+  cursor: default;
 }

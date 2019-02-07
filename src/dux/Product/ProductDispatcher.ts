@@ -1,4 +1,4 @@
-import { Product } from "../../common/models/Product";
+import { Product } from "../../common/business-models/Product";
 import { ProductFetchedAction } from "./ProductActions";
 
 export const setProducts = (products: Product[]) => {

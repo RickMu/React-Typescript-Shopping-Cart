@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
-import { CartProduct } from "../../common/models/CartProduct";
-import { Product } from "../../common/models/Product";
+import { CartProduct } from "../../common/business-models/CartProduct";
+import { Product } from "../../common/business-models/Product";
+import { Dictionary } from "../../common/models/dictionary";
 import { addCartProduct, removeCartProduct } from "../../dux/CartProduct/CartProductDispatcher";
 import { getCartProducts } from "../../dux/CartProduct/CartProductSelector";
 import { AppState } from "../../dux/rootReducer";
@@ -13,7 +14,7 @@ interface DispatchProps {
 }
 
 interface StateProps {
-  cartProducts: CartProduct[];
+  cartProducts: Dictionary<CartProduct>;
 }
 
 export type CartProps = StateProps & DispatchProps;

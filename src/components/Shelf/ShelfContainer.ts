@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { Product } from "../../common/models/Product";
+import { Product } from "../../common/business-models/Product";
 import { addCartProduct } from "../../dux/CartProduct/CartProductDispatcher";
 import { getProducts } from "../../dux/Product/ProductSelector";
 import { AppState } from "../../dux/rootReducer";

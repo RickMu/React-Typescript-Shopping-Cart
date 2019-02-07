@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import { CartProduct } from "./common/models/CartProduct";
-import {Product} from "./common/models/Product";
+import { CartProduct } from "./common/business-models/CartProduct";
+import {Product} from "./common/business-models/Product";
 import CartContainer from "./components/Cart/CartContainer";
 import ShelfContainer from "./components/Shelf/ShelfContainer";
 import { AddCartProductAction } from "./dux/CartProduct/CartProductActions";
@@ -39,8 +39,22 @@ class App extends Component {
       title: "Cat Tee Black T-Shirt",
     };
 
+    const product2: Product = {
+      availableSizes: ["S", "XS"],
+      currencyFormat: "$",
+      currencyId: "USD",
+      description: "4 MSL",
+      id: 12,
+      installments: 9,
+      isFreeShipping: true,
+      price: 10.9,
+      sku: 51498472915966366,
+      style: "Black with custom print",
+      title: "Cat Tee Black T-Shirt",
+    };
+
     rootStore.dispatch(new AddCartProductAction(cartProduct));
-    rootStore.dispatch(setProducts([product]));
+    rootStore.dispatch(setProducts([product,product2]));
   }
 
   public render() {

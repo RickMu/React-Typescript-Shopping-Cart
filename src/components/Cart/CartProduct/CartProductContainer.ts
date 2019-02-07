@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { CartProduct } from "../../../common/models/CartProduct";
+import { CartProduct } from "../../../common/business-models/CartProduct";
 import { removeCartProduct } from "../../../dux/CartProduct/CartProductDispatcher";
 import CartProductView from "./CartProduct";
 

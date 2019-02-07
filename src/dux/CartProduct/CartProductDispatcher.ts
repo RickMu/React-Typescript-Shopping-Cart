@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
-import { CartProduct } from "../../common/models/CartProduct";
-import { Product } from "../../common/models/Product";
+import { CartProduct } from "../../common/business-models/CartProduct";
+import { Product } from "../../common/business-models/Product";
 import { AddCartProductAction, RemoveCartProductAction } from "./CartProductActions";
 
 

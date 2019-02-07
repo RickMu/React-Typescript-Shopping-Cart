@@ -1,4 +1,5 @@
-import { CartProduct } from "../../common/models/CartProduct";
+import { CartProduct } from "../../common/business-models/CartProduct";
+import { Dictionary } from "../../common/models/dictionary";
 import {
   AddCartProductAction,
   CartProductAction,
@@ -6,11 +7,11 @@ import {
   RemoveCartProductAction } from "./CartProductActions";
 
 export interface CartProductState {
-  products: CartProduct[];
+  products: Dictionary<CartProduct>;
 }
 
 const initialState: CartProductState = {
-  products: [],
+  products: {},
 };
 
 // tslint:disable-next-line: max-line-length
@@ -19,17 +20,25 @@ export function cartProductReducer(state: CartProductState = initialState, actio
   switch (action.type) {
     case CartProductActionTypes.ADD_PRODUCT: {
       const product = (action as AddCartProductAction).product;
-      const products = state.products.concat(product);
+
+      if (state.products[product.sku.toString()]) {
+        product.itemQuantity += state.products[product.sku.toString()].itemQuantity;
+      }
+
       return {
         ...state,
-        products,
+        products: {
+          ...state.products,
+          [product.sku.toString()]: product,
+        },
       };
     }
 
     case CartProductActionTypes.REMOVE_PRODUCT: {
-      const products = [...state.products];
       const id = (action as RemoveCartProductAction).id;
-      products.splice(id, 1);
+      const products = {...state.products};
+      delete products[id];
+
       return {
         ...state,
         products,

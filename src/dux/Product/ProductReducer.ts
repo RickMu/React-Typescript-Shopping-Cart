@@ -1,4 +1,5 @@
-import {Product} from "../../common/models/Product";
+import {Product} from "../../common/business-models/Product";
+import { Dictionary } from "../../common/models/dictionary";
 import { ProductActions, ProductActionType } from "./ProductActions";
 
 export interface ProductState {
@@ -14,6 +15,7 @@ export function productReducer(state: ProductState = initialState, action: Produ
   switch (action.type) {
 
     case ProductActionType.PRODUCT_FETCHED:
+
       return {
         ...state,
         products: action.products,
