@@ -33,7 +33,7 @@ class App extends Component {
       id: 12,
       installments: 9,
       isFreeShipping: true,
-      price: 10.9,
+      price: 12.9,
       sku: 12064273040195392,
       style: "Black with custom print",
       title: "Cat Tee Black T-Shirt",
@@ -54,7 +54,7 @@ class App extends Component {
     };
 
     rootStore.dispatch(new AddCartProductAction(cartProduct));
-    rootStore.dispatch(setProducts([product,product2]));
+    rootStore.dispatch(setProducts([product, product2]));
   }
 
   public render() {

@@ -7,7 +7,7 @@ This project is a typescript implementation of https://github.com/jeffersonRibei
 - Product stoppers for free shipping
 
 ### TODO
-- Products persist in floating cart even after page reloads
+- Products persist in floating cart even after page reloadsx
 - Responsive design for desktop, tablets and mobile
 - Unit tests, integration tests and e2e testing
 - node server for json data

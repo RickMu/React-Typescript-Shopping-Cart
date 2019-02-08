@@ -1,4 +1,5 @@
 import React from "react";
+import SortContainer from "../Sort/SortContainer";
 import "./style.scss";
 
 interface Props {
@@ -11,6 +12,7 @@ const ShelfHeader: React.FunctionComponent<Props> = ({productsLength}) => {
       <small className="products-found">
         <span>{productsLength} Product(s) found.</span>
       </small>
+      <SortContainer/>
     </div>
   );
 };

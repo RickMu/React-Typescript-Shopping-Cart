@@ -20,7 +20,8 @@ class CartProductView extends Component<CartProductProps, State> {
 
     return (
     <div className="cart-item">
-      <div className="remove-icon" onMouseEnter={this.toggleMouseOverState} onMouseLeave={this.toggleMouseOverState}/>
+      <div className="remove-icon" onMouseEnter={this.toggleMouseOverState} onMouseLeave={this.toggleMouseOverState}
+        onClick={() => this.props.removeCartProduct(product, product.sku)}/>
       <div className="thumb">
         <img src={require(`../../../static/products/${product.sku}_2.jpg`)} alt={product.title} title={product.title} />
       </div>

@@ -18,7 +18,6 @@ class Shelf extends Component<ShelfProp, State> {
     return(
       <React.Fragment>
         <div className="shelf">
-
         <FilterContainer/>
         <div className="shelf-container">
           <ShelfHeader productsLength={this.props.products.length}/>
