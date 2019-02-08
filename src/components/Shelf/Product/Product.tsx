@@ -9,7 +9,7 @@ interface Props {
   key: number;
 }
 
-const ProductView: React.FunctionComponent<Props> = ({product, addToCart, key}) => {
+const ProductView: React.FunctionComponent<Props> = ({product, addToCart}) => {
 
   const formattedPrice = product.price;
   let productInstallment;

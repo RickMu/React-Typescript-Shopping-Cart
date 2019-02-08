@@ -26,7 +26,9 @@ class Cart extends React.Component<CartProps, State> {
     for (const k in this.props.cartProducts) {
       cartProducts.push(this.props.cartProducts[k]);
     }
-
+    const itemQuantity = cartProducts.reduce((sum: number, product: CartProduct) => {
+      return sum + product.itemQuantity;
+    }, 0);
     return (
       <div className={classes}>
         <div className="cart-close-button" onClick={this.toggleCartDrawer}>X</div>
@@ -34,7 +36,7 @@ class Cart extends React.Component<CartProps, State> {
         <div className="float-cart_content">
           <div className="float-cart_header">
             <div className={trolleyCss} onClick={this.toggleCartDrawer}>
-              <span className={trolleyItemQuantityCss}>{this.props.cartProducts.length}</span>
+              <span className={trolleyItemQuantityCss}>{itemQuantity}</span>
             </div>
             <span className="header-title">Cart</span>
           </div>
